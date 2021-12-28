@@ -50,5 +50,22 @@ def busca_binaria_lista(lista, elemento):
 
 # 7. Nó e alocação encadeada (objetos/dicionário)
 # - Diferente das listas de alocação sequenciais, são armazenados em espaços quaisquer e só há a alocação de memória a mais quando necessário. Para fazer o encadeamento desses dados que não são contíguos, há o uso do "nó". Sendo um envelope que está na memória e dentro desse envelope contém o dado em si e a informação do próximo nó, para formar o encadeamento. *não é possível encontrar o elemento anterior com o nó.
+# - Python não há um built-in para criar as linked lists, assim, se cria manualmente utilizando os conceitos de nó's. As linked lists são utilizadas para armazenar valores como as listas de alocação sequêncial, porém, com uma maior facilidade para gerenciamento de memória, pois esse alocamento é feito de forma dinâmica, ou seja, se precisar adicionar mais um valor, a alteração ocorre apenas adicionando esse valor, não há alteração na lista inteira como na lista de alocação sequêncial (add um valor => cria uma lista nova inteira com o novo valor).
+
+# * Análise de complexidade entre listas sequênciais e linked lists
+# - Acessar um elemento: sequencial = O(1) / linked = O(n)
+# - Modificar elemento: sequencial = O(1) / linked = O(n)
+# - Adicionar um novo elemento: sequencial = O(1) / linked = O(n)
+# - Remover um elemento: sequencial = O(1) / linked = O(n)
 
 
+# 8. Pilhas
+# - Utilizado para situações específicas em que os dados terão a política de acesso LIFO (last in -> first out), ou seja, último a entrar será o primeiro a sair.
+# - As pilhas também utilizam o conceito de nó, contendo nele o dado e a informação do próximo elemento (sempre começando do topo para baixo).
+# - O acesso nos elementos da pilha ocorre do topo para baixo, ou seja, caso queira visualizar o último elemento da pilha (topo), bastaria uma complexidade de O(1). Com essa informação, é possível constatar que as operações de adicionar um elemento na pilha ou remover um elemento (ambos ocorrem no topo), basta apenas saber qual o último elemento, tendo então uma complexidade O(1). E para visualizar os elementos da pilha, bastaria percorre-la por inteira, com complexidade O(n).
+
+# 9. Filas
+# - Seguem a política de acesso FIFO (first in -> first out), assim, o primeiro a chegar será o primeiro a sair.
+# - As filas mantém o conceito de nó e usualmente são importantes estruturas de dados para gerenciar processos e requisições, em que aplicações podem aguentar grande sobrecarga e realizar as tarefas sem a queda do sistema, sendo uma ótima opção para gerenciar um sistema em gargalo ao organiza-los em filas e realizando as ações em sequência sem perder dados.
+# - Com o objetivo de aumentar a performance, as filas adicionam elementos no final dela e retiram no início, e isso só é possível pois a pilha armazena o primeiro e último nó na sua criação. Mas a estrutura do nó se mantém.
+# - Em termos de complexidade, adicionar ou remover um elemento na fila tem complexidade O(1), pois só podemos adicionar um elemento no final dela (temos a informação do nó final) e também só podemos retirar um elemento se estiver no início dela (tb temos essa informação). E para saber o primeiro elemento da fila tb há a complexidade O(1).
